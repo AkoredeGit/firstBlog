@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/Styles/category.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/Styles/genStyle.css" />
+    <script src="/Scripts/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div id="pageContent">
+            <header>
+                <h1 class="logo"><a href="/">Life Tips</a></h1>
+                <ul class="nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li class="category">Category
+                        <div class="dropdownContent">
+                            <a href="/category/Lifestyle">lifestyle</a>
+                        <a href="/category/Music">Music</a>
+                        <a href="/category/Health">Health</a>
+                        <a href="/category/Travel">Travels</a>
+                        </div>
+                    </li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+
+                <div>
+                    <div class="bars">
+                        <p><i class="fa fa-bars fa-2x"></i>Menu</p>
+                    </div>
+                </div>
+
+            </header>
+        <main>
+            <div id="info">
+                <h1 class="abtHeader">Category: <%= data.docs[0].category %></h1>
+                <hr id="aboutLine">
+                <p class="shortAbout">Duis ex ad cupidatat tempor Excepteur cillum cupidatat fugiat nostrud cupidatat dolor sunt sint sit nisi est eu exercitation incididunt adipisicing veniam velit id fugiat enim mollit amet anim veniam dolor dolor irure velit commodo.
+                </p>
+            </div>
+
+            <div id="post">
+                <% for(var i= 0; i < data.docs.length; i++){%>
+                    <div>
+                        <div class="imageDiv" class="anchors">
+                            <a class="images" href="/post/<%= data.docs[i]._id %>">
+                            <img class="images" src="/images/<%= data.docs[i].Image %>" alt="post Image">
+                            </a>
+                        </div>
+                        <p class="postTitle"><a href="/category/<%= data.docs[i].category %>">
+                            <%= data.docs[i].category %>
+                        </a></p>
+                        <p class="postContent"><a href="/post/<%= data.docs[i]._id %>">
+                            <%= data.docs[i].Headline %>
+                        </a></p>
+                        <p class="postDate"><%= data.docs[i].postDate.toDateString() %></p>
+                    </div>
+                <%}%>
+            </div>
+
+            <div id="pagination">
+                <ul class="pagination">
+                    <li id="prev"><a id="previous">Prev page</a></li>
+                    <% for(var i = 0; i < data.pages; i++){ %>
+                        <li><a class="pages" id="<%= i+ 1 %>" href="/category/<%= data.docs[0].category %>/page=<%= i + 1 %>">
+                            <%= i + 1 %>
+                        </a></li>
+                    <% } %>
+                    <li><a id="nxt" href="">Next page</a></li>
+                    <li class="next" id="<%= data.pages %>" style="display: none;"></li>
+
+                </ul>
+            </div>
+        </main>
+        <section></section>
+        <aside></aside>
+        <footer>
+            <div id="about">
+                <p id="footAbt"> About Health Tips</p>
+                <hr id="abtHr">
+                <p class="abtContent">Fugiat quas eveniet voluptatem natus. Placeat error temporibus magnam sunt optio aliquam.
+                    Ut ut occaecati placeat at. Fuga fugit ea autem.
+                    Dignissimos voluptate repellat occaecati minima dignissimos mollitia consequatur.
+                    Sit vel delectus amet officiis repudiandae est voluptatem. Tempora maxime provident nisi et fuga et enim exercitationem ipsam. 
+                    Culpa error temporibus magnam est voluptatem.
+                </p>
+            
+            </div>
+                
+            <div id="newsLetter">
+                <p id="newsAbt"> Our NewsLetter</p>
+                <hr id="abtHr">
+                <p class="abtContent">Sit vel delectus amet officiis repudiandae est voluptatem. 
+                    Tempora maxime provident nisi et fuga et enim exercitationem ipsam. 
+                    Culpa consequatur occaecati.
+                </p>
+                <p id="copyright">
+                    Copyright ©2018 All rights reserved
+                </p>
+        </footer>
+    </div>
+    
+</body>
+<script src="/Scripts/category.js"></script>
+</html>

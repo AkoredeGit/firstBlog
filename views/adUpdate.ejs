@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        Life Tips Admin Page        
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/Styles/homeAdmin.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/Styles/genAdmin.css" />
+    <style>
+       main{
+           margin-left: 15%;
+       }
+    </style>
+    <script src="/Scripts/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div id="Page">
+            <header>
+                <div class="bars">
+                    <p><i class="fa fa-bars fa-1x"></i>Menu</p>
+                </div>
+                <h1 id="head">Life Tips</h1>
+            </header>
+        
+        
+        <main>
+            <h2>Update this Post</h2>
+            <form action="/<%= data._id %>" method="POST" enctype="multipart/form-data">
+                <input id="author" value="<%= data.author %>" name="author" type="text" placeholder="Author Name" required>
+
+                <input id="headline" value="<%= data.category %>" name="category" required>
+            
+                <input id="headline" value="<%= data.Headline %>" name="headline" type="text" placeholder="Post Headline">
+                <input id="articleHead" value="<%= data.postHead %>" name="articleHead" type="text" placeholder="Article Head">
+                <!-- <div id="image">
+                    <span>Change Image:  </span><input value="<%= data.Image %>" name="image" type="file">
+                </div> -->
+                <textarea required name="content" placeholder="Enter Article Content">
+                    <%= data.Content %>
+                </textarea>
+                <input id="button" type="submit" value="Update your Article">
+            </form>
+        </main>
+
+        <aside>
+            <nav>
+                <img id="adminImage" alt="admin image">
+                <span id="adminName"></span>
+                <h3 id="dash"><a href="/admin">Dashboard</a></h3>
+                <ul>
+                    <li><i class="fa-circle-o  fa-2x"><a href="/admin/posts"></i>Posts</a></li>
+                    <li><i></i>Edit About Page</li>
+                    <li><i></i>Edit Contact Page</li>
+                    <li><i class="fa-envelope-o fa-2x"></i>Messages</li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
+</body>
+<script src="/Scripts/admin.js"></script>
+</html>

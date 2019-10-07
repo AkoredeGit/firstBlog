@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= post.Headline %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/Styles/post.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/Styles/genStyle.css" />
+    <script src="/Scripts/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div id="pageContent">
+        <header>
+            <h1 class="logo"><a href="/">Life Tips</a></h1>
+            <ul class="nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li class="category">Category
+                    <div class="dropdownContent">
+                        <a href="/category/Lifestyle">Lifestyle</a>
+                        <a href="/category/Music">Music</a>
+                        <a href="/category/Design">Design</a>
+                        <a href="/category/Travel">Travel</a>
+                    </div>
+                </li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+
+            <div>
+                <div class="bars">
+                    <p><i class="fa fa-bars fa-2x"></i>Menu</p>
+                </div>
+            </div>
+            
+        </header>
+        <main>
+            <div id="heading">
+                <h1 id="postHead"><%= post.Headline %></h1>
+                <div id="dates_author">
+                    <span id="Date"><%= post.postDate.toDateString() %></span>
+                    <span id="author"><%= post.author %></span>
+                </div>
+            </div>
+            <div id="postImage">
+                <img id="imagePost" src="/images/<%= post.Image %>" alt="post Image">
+            </div>
+            <div id="postContent">
+                    <p id="MainHead"><%= post.postHead %></p>
+                    <article class="post">
+                        <%= post.Content %>
+                    </article>
+            </div>
+            <div id="postedIn">
+                <div id="postIn">
+                    <h2 class="head">Posted In:</h2>
+                    <p id="life"><%= post.category %></p>
+                </div>
+                <div id="tags">
+                    <h2 class="head">Tags</h2>
+                    <div class="tags">design</div>
+                    <div class="tags">Lifestyle</div>
+                    <div class="tags">Music</div>
+                    <div class="tags">Travels</div>
+                </div>
+            </div>
+            <div id="comSection">
+                <h3 class="noComment"><%= post.postComment.length %> Comment</h3>
+                <% for(var i= 0; i < post.postComment.length; i++){%>
+                    <div class="comments">
+                        <p class="date"><%= post.postComment[i].date.toDateString() %></p>
+                        <p class="name"><%= post.postComment[i].name %></p>
+                        <p class="comment"><%= post.postComment[i].comment %></p>
+                    </div>
+                <%}%>
+                
+            </div>
+            
+            <form id="postComment" method="POST" action="/post/<%= post.Headline %>">
+                <p class="heads">Add Comment </p>
+                        
+                <div class="forms">
+                    <input name="Name" class="authorName" type="text" placeholder="Your Name">
+        
+                    <textarea name="Comment" class="authorComment" type="text" placeholder="Your Comment"></textarea>
+                            
+                    <input class="add" type="submit" value="Add Comment">
+                </div>
+        
+                </form>
+            </div>
+        </main>
+        <footer>
+            <div id="about">
+                <p id="footAbt"> About Life Tips</p>
+                <hr id="abtHr">
+                <p class="abtContent">Fugiat quas eveniet voluptatem natus. Placeat error temporibus magnam sunt optio aliquam.
+                    Ut ut occaecati placeat at. Fuga fugit ea autem.
+                    Dignissimos voluptate repellat occaecati minima dignissimos mollitia consequatur.
+                    Sit vel delectus amet officiis repudiandae est voluptatem. Tempora maxime provident nisi et fuga et enim exercitationem ipsam. 
+                    Culpa error temporibus magnam est voluptatem.
+                </p>
+                
+            </div>
+                    
+            <div id="newsLetter">
+                <p id="newsAbt"> Our NewsLetter</p>
+                <hr id="abtHr">
+                <p class="abtContent">Sit vel delectus amet officiis repudiandae est voluptatem. 
+                    Tempora maxime provident nisi et fuga et enim exercitationem ipsam. 
+                    Culpa consequatur occaecati.
+                </p>
+                <p id="copyright">
+                    Copyright ©2018 All rights reserved
+                </p>
+            </div>
+        </footer>
+    </div>
+    
+</body>
+<script src="/Scripts/life.js"></script>
+</html>

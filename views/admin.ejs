@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/Styles/genAdmin.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/Styles/homeAdmin.css" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="/Scripts/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div id="Page">
+        <header>
+            <div class="bars">
+                <p><i class="fa fa-bars fa-2x"></i>Menu</p>
+            </div>
+            <h1 id="head">Life Tips</h1>
+        </header>
+
+        <main>
+            <h2>Write a Post Here.</h2>
+            <form action="/" method="POST" enctype="multipart/form-data">
+                <input id="author"  name="author" type="text" placeholder="Author Name" required>
+                <select name="category" list="categories" id="cat" required>
+                    <datalist id="categories">
+                        <option value="" selected>Select a Category</option>
+                        <option value="Music">Music</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Health">Health</option>
+                        <option value="Lifestyle">Lifestyle</option>
+                    </datalist>
+                </select>
+                <input id="headline" name="headline" type="text" placeholder="Post Headline">
+                <input id="articleHead" name="articleHead" type="text" placeholder="Article Head">
+                <div id="image">
+                    <span>Post Image:  </span><input name="image" type="file">
+                </div>
+                <textarea name="content" placeholder="Enter Article Content"></textarea>
+                <input class="post" id="button" type="submit" value="Post your Article">
+            </form>
+
+        </main>
+
+        <aside>
+            <nav>
+                <img id="adminImage" alt="admin image">
+                <span id="adminName"></span>
+                <h3 id="dash"><a href="/admin">Dashboard</a></h3>
+                <ul>
+                    <li><i class="fa-circle-o  fa-2x"><a href="/admin/posts"></i>Posts</a></li>
+                    <li><i></i>Edit About Page</li>
+                    <li><i></i>Edit Contact Page</li>
+                    <li><i class="fa-envelope-o fa-2x"></i>Messages</li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
+</body>
+<script src="/Scripts/admin.js"></script>
+</html>

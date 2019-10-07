@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>
+        Life Tips Admin Page        
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/Styles/admin2.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="/Styles/genAdmin.css" />
+    <script src="/Scripts/jquery-3.3.1.js"></script>
+</head>
+<body>
+    <div id="Page">
+        <header>
+            <div class="bars">
+                <p><i class="fa fa-bars fa-2x"></i>Menu</p>
+            </div>
+            <h1 id="head">Life Tips</h1>
+        </header>
+        
+        
+        <main>
+            <% for( var i = 0; i < data.length; i++){%>
+                <div class="anchors" id="no<%= i+1 %>">
+                    <div class="imageDiv" class="anchors">
+                        <a class="images" href="/admin/image/<%= data[i]._id %>">
+                            <img class="images" src="/images/<%= data[i].Image %>" alt="post Image">
+                        </a>
+                    </div>
+                    <p class="postTitle"><a href="/admin/<%= data[i]._id %>">
+                        <%= data[i].category %>
+                    </a></p>
+                    <p class="postContent"><a href="/admin/<%= data[i]._id %>">
+                        <%= data[i].Headline %>
+                    </a></p>
+                    <p class="views">
+                        <i></i><span>Views: <%= data[i].views %> </span>
+                        <i></i><span class="comment">Comments: <%= data[i].postComment.length %></span>
+                    </p>
+                    <button id="<%= data[i]._id %>" class="delete" type="button">DELETE</button>
+                    </div>
+                <%}%>
+        </main>
+
+        <aside>
+            <nav>
+                <img id="adminImage" alt="admin image">
+                <span id="adminName"></span>
+                <h3 id="dash"><a href="/admin">Dashboard</a></h3>
+                <ul>
+                    <li><i class="fa-circle-o  fa-2x"><a href="/admin/posts"></i>Posts</a></li>
+                    <li><i></i>Edit About Page</li>
+                    <li><i></i>Edit Contact Page</li>
+                    <li><i class="fa-envelope-o fa-2x"></i>Messages</li>
+                </ul>
+            </nav>
+        </aside>
+    </div>
+</body>
+<script src="/Scripts/admin.js"></script>
+</html>

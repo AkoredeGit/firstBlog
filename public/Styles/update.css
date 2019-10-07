@@ -1,0 +1,17 @@
+.images{
+   margin: 0 0 5% 20%;
+   height: 300px;
+}
+.head{
+    cursor: pointer;
+    margin-right: 5%;
+}
+#image{
+    margin: 8% 2% 5% 2%;
+}
+form{
+    display: none;
+}
+.active{
+    display: block;
+}

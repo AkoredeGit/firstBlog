@@ -1,0 +1,142 @@
+main{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 10px;
+}
+#head{
+    grid-column: 1/5;
+    grid-row: 1/3;
+    padding-right: 2%;
+}
+.abtHeader{
+    font-size: 40px;
+    margin-top: 80px;
+    margin-left: 10%;
+    font-family: Calibri;
+    font-weight: bold;
+    margin-right: 5%;
+}
+#aboutLine{
+    color: #bcaaa4;
+    margin-right: 20%;
+    margin-left: 10%;
+    opacity: 0.5;
+}
+.shortAbout{
+    width: 95%;
+    margin-left: 4%;
+    margin-top: 30px;
+    font-size: 20px;
+    font-family: Calibri;
+}
+#image{
+    grid-column: 1/5;
+    grid-row: 3/5;
+}
+.abtImage{
+    width: 100%;
+    height: 100%;
+}
+#content{
+    grid-column: 1/5;
+    grid-row: 5/6;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-family: Calibri;
+}
+#storyHead{
+    font-size: 28px;
+    padding-top: 30px;
+    font-weight: bold;
+}
+.para{
+    margin-top: 30px;
+    font-size: 23px;
+    font-weight: 200px;
+    white-space: pre-line;
+    word-break: normal;
+    word-spacing: 2px;
+}
+#misVis{
+    grid-column: 1/5;
+    grid-row: 6/10;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap: 10px;
+    font-family: Calibri;
+}
+#misVis p{
+    white-space: pre-line;
+    padding: 0 4% 0 4%;
+}
+#who{
+    grid-column: 1/3;
+    grid-row: 1/2;
+}
+.who{
+    font-size: 25px;
+    font-weight: bold;
+}
+.whoContent{
+    font-size: 20px;
+}
+#mission{
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+#vision{
+    grid-column: 1/3;
+    grid-row: 3/4;
+}
+#core{
+    grid-column: 1/3;
+    grid-row: 4/5;
+}
+@media screen and (min-width: 1000px){
+    #head{
+        padding-right: 8%;
+    }
+    #who{
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+    #mission{
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+    #vision{
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+    #core{
+        grid-column: 2/3;
+        grid-row: 2/3;
+    }
+    .abtHeader{
+        margin-left: 38%;
+    }
+    #aboutLine{
+        margin-right: 38%;
+        margin-left: 38%;
+    }
+    .shortAbout{
+        font-size: 25px;
+        word-spacing: 2px;
+        margin-left: 8%;
+    }
+}
+@media screen and (max-width: 999px) and (min-width: 520px){
+    .abtHeader{
+        margin-left: 35%;
+    }
+    #aboutLine{
+        margin-right: 35%;
+        margin-left: 38%;
+    }
+    .shortAbout{
+        font-size: 23px;
+        word-spacing: 2px;
+    }
+}
